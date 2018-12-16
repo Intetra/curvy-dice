@@ -55,7 +55,6 @@ class NoCurve extends Component {
           <button value='20' onClick={this.setDie} id='D20' className='button' type='submit'>Roll d20</button>
           <button value='100' onClick={this.setDie} id='D100' className='button' type='submit'>Roll d100</button>
         </form>
-        <br/>
 
         <p className='result'>{this.state.result ? this.state.result : null}</p>
       </div>
