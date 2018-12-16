@@ -2,6 +2,7 @@ body {
   background: #265661;
   color: #6E364B;
   text-align: center;
+  max-height: 80vh;
 }
 
 .nav {
@@ -50,6 +51,7 @@ button:focus {
 .result {
   color: #ADA33B;
   font-size: 8em;
+  margin: 0;
 }
 
 .subHeader {
