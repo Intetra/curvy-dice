@@ -27,9 +27,11 @@ class Home extends Component {
               The rogue blindly leaps into the room, triggering multiple traps and takes 5d10 damage, leaving them a quivering pile of goo riddled with poison darts and flaming arrows.
             </p>
             <br />
+            {/*
             <img
               className='paragraphImage'
               src='https://via.placeholder.com/150' alt='placeholder'/>
+            */}
             <br />
             <br />
             Ah yes, that went well; Sadly this is a scene we’re all too familiar with.
