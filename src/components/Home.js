@@ -17,7 +17,7 @@ class Home extends Component {
             Join me as we step into the fantastic world of tabletop gaming together...
             <br />
             <p className='storyParagraph'>
-              Warily, the party enters a large, well lit room deep within the catacombs, the party rogue, a veteran of countless dungeons and moonlight raids, rolls to check for traps.
+              Warily, the party enters a large, well lit room deep within the catacombs. The party rogue, a veteran of countless dungeons and moonlight raids, rolls to check for traps.
               <br />
               <br />
               <span className='midStory'>(Player rolls 1d20)… and it’s a 1, -_- awesome.

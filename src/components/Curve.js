@@ -68,7 +68,7 @@ class Curve extends Component {
 
   randoRoller() {
     var x = Roll(this.state.die)
-    setTimeout(function() { this.setState({result: x}); }.bind(this), 200);
+    this.setState({result: x});
   }
 
   setDie(event) {
@@ -82,12 +82,11 @@ class Curve extends Component {
   }
 
   handleSubmit(event) {
+    //uncomment this for testing
     //this.rollTesting(this.state.die)
     event.preventDefault();
-
-    for (let i=0;i<500;i++) {
-      this.randoRoller();
-    }
+    let rolling = setInterval(function() { this.randoRoller(); }.bind(this), 20);
+    setTimeout(() => { clearInterval(rolling); }, 1000);
   }
 
   render() {
