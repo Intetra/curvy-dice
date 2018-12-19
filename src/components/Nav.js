@@ -5,7 +5,7 @@ var NavLink = require('react-router-dom').NavLink;
 
 function Nav () {
   return (
-    <div>
+    <div className='navBar'>
       <ul className='nav'>
         <li>
           <NavLink exact activeClassName='active' to='/'>
@@ -23,7 +23,6 @@ function Nav () {
           </NavLink>
         </li>
       </ul>
-      <hr />
     </div>
   )
 

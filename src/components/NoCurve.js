@@ -16,6 +16,12 @@ class NoCurve extends Component {
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setDie = this.setDie.bind(this);
+    this.randoRoller = this.randoRoller.bind(this);
+  }
+
+  randoRoller() {
+    var x = Roll(this.state.die)
+    setTimeout(function() { this.setState({result: x}); }.bind(this), 200);
   }
 
   setDie(event) {
@@ -30,12 +36,9 @@ class NoCurve extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-
-    this.setState(function() {
-      return {
-        result: Roll(this.state.die)
-      }
-    })
+    for (let i=0;i<500;i++) {
+      this.randoRoller();
+    }
   }
 
   render() {
@@ -44,7 +47,7 @@ class NoCurve extends Component {
         <header className="nocurve-header">
           <Nav />
         </header>
-        <p className='subHeader'>Regular Dice</p>
+        <p className='mainParagraph'>Regular Dice</p>
         <form className='rollForm' onSubmit={this.handleSubmit}>
           <button value='2' onClick={this.setDie} id='D2' className='button' type='submit'>Roll d2</button>
           <button value='4' onClick={this.setDie} id='D4' className='button' type='submit'>Roll d4</button>

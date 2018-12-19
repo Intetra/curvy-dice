@@ -24,8 +24,7 @@ class Curve extends Component {
   }
 
 //only here for testing purposes
-  rollTesting() {
-    var i;
+  rollTesting(die) {
     var foo = {
       one:0,
       two:0,
@@ -38,8 +37,8 @@ class Curve extends Component {
       nine:0,
       ten:0
     }
-    for (i = 0; i < 100000; i++) {
-      var e = Roll(10)
+    for (let i = 0; i < 100000; i++) {
+      var e = Roll(die)
       e === 1
         ? foo.one += 1
         : e === 2
@@ -67,6 +66,11 @@ class Curve extends Component {
   }
 //end testing
 
+  randoRoller() {
+    var x = Roll(this.state.die)
+    setTimeout(function() { this.setState({result: x}); }.bind(this), 200);
+  }
+
   setDie(event) {
     var value = event.target.value;
 
@@ -78,13 +82,12 @@ class Curve extends Component {
   }
 
   handleSubmit(event) {
+    //this.rollTesting(this.state.die)
     event.preventDefault();
 
-    this.setState(function() {
-            return {
-        result: Roll(this.state.die)
-      }
-    })
+    for (let i=0;i<500;i++) {
+      this.randoRoller();
+    }
   }
 
   render() {
@@ -93,7 +96,7 @@ class Curve extends Component {
         <header className="nocurve-header">
           <Nav />
         </header>
-        <p className='subHeader'>Curved Dice</p>
+        <p className='mainParagraph'>Curved Dice</p>
         <form className='rollForm' onSubmit={this.handleSubmit}>
           <button value='2' onClick={this.setDie} id='D2' className='button' type='submit'>Roll d2</button>
           <button value='4' onClick={this.setDie} id='D4' className='button' type='submit'>Roll d4</button>
